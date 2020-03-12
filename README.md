@@ -8,7 +8,7 @@ Change
 Tomer Weiss (<tomer196@gmail.com>), Ortal Senouf, Sanketh Vedula, Oleg Michailovich, Michael Zibulevsky, Alex Bronstein
 
 <p align="center">
-       <img src="pipeline.pdf">
+       <img src="pipeline.png">
 </p>
 
 ## Introduction
