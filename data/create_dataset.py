@@ -8,6 +8,7 @@ import scipy.io as sio
 from util.sphere_interp import *
 from dipy.io import read_bvals_bvecs
 import nibabel as nib
+import pathlib
 
 # load the set of diffusion direction
 mat = sio.loadmat('dir90.mat')
@@ -17,6 +18,9 @@ dirs90=HemiSphere(theta=theta.squeeze(), phi=phi.squeeze()).vertices
 
 raw_dir = '/mnt/walkure_pub/Datasets/tomer/h5_1000_new2/raw/'
 out_dir = '/home/tomerweiss/Datasets/dMRI/h5_1000_new3/'
+pathlib.Path(out_dir).mkdir(exist_ok=True)
+pathlib.Path(out_dir + 'train/').mkdir(exist_ok=True)
+pathlib.Path(out_dir + 'val/').mkdir(exist_ok=True)
 
 dirlist = os.listdir(raw_dir)
 i = 0
@@ -52,9 +56,13 @@ for dir_name in dirlist:
             resampled_dwi = mask_dwi(resampled_dwi, mask)
             resampled_dwi = resampled_dwi.astype('float32')
 
+            if dir_name[-1] == '9':
+                out_dir_full = out_dir + 'train/'
+            else:
+                out_dir_full = out_dir + 'val/'
             # save each slice
             for j in range(resampled_dwi.shape[2]):
-                h5f = h5py.File(out_dir + dir + '_s' + str(j) + '.h5', 'w')
+                h5f = h5py.File(out_dir_full + dir_name + '_s' + str(j) + '.h5', 'w')
                 h5f.create_dataset('data', data=resampled_dwi[:,:,j,:])
                 h5f.close()
             i += 1
