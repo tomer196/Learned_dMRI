@@ -29,7 +29,7 @@ def create_data_loaders(args):
     data = SliceData(
         root=args.data_path / f'{args.data_split}',
         transform=DataTransform(args.resolution),
-        sample_rate=0.2
+        sample_rate=1.
     )
     data_loader = DataLoader(
         dataset=data,

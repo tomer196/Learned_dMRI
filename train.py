@@ -312,8 +312,8 @@ def create_arg_parser():
     parser.add_argument('--out_directions', default=90, type=int, help='disiared amount of output directions')
     parser.add_argument('--direction-learning', default=True,
                         help='direction_learning, if set to False, fixed trajectory, only reconstruction learning.')
-    parser.add_argument('--initialization', type=str, default='spiral',
-                        help='Trajectory initialization when using PILOT (spiral, EPI, rosette, uniform, gaussian).')
+    parser.add_argument('--initialization', type=str, default='random',
+                        help='direction initialization - random, uniform.')
     return parser
 
 

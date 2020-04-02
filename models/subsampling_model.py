@@ -60,7 +60,7 @@ class Subsampling_Model(nn.Module):
     def __init__(self, out_directions,  dir_decimation_rate, direction_learning, initialization, chans, num_pool_layers, drop_prob):
         super().__init__()
 
-        self.subsampling = Subsampling_Layer(out_directions, traj_decimation_rate, dir_decimation_rate, direction_learning, initialization)
+        self.subsampling = Subsampling_Layer(out_directions, dir_decimation_rate, direction_learning, initialization)
         self.reconstruction_model = UnetModel(out_directions // dir_decimation_rate, out_directions, chans, num_pool_layers, drop_prob)
 
     def forward(self, input):
@@ -69,4 +69,4 @@ class Subsampling_Model(nn.Module):
         return output
 
     def get_directions(self):
-        return self.subsampling.get_trajectory()
+        return self.subsampling.get_directions()

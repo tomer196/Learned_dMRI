@@ -21,7 +21,7 @@ class Args(argparse.ArgumentParser):
         # Data parameters
         self.add_argument('--data-path', type=pathlib.Path,
                           default='/mnt/walkure_pub/Datasets/tomer/h5_1000_new2',help='Path to the dataset')
-        self.add_argument('--sample-rate', type=float, default=1,
+        self.add_argument('--sample-rate', type=float, default=1.,
                           help='Fraction of total volumes to include')
         # Override defaults with passed overrides
         self.set_defaults(**overrides)
