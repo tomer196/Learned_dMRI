@@ -30,8 +30,8 @@ class Subsampling_Layer(nn.Module):
 
     def forward(self, input):
         with torch.no_grad():
-            self.theta.data = self.theta.clamp(0, np.pi)
-            self.phi.data = self.phi.clamp(0, 2 * np.pi)
+            self.theta.data = self.theta.clamp(0, np.pi / 2)
+            self.phi.data = self.phi.clamp(-np.pi, np.pi)
         input = input.permute(0, 2, 3, 1)
         dwi_sh = torch.matmul(input, self.invB.t())  #dwi2sh(input,self.orig_theta,self.orig_phi,self.sh_order,self.smooth)
         output = sh2dwi(dwi_sh, self.theta, self.phi, self.sh_order, self.smooth)
