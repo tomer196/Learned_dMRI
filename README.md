@@ -1,9 +1,9 @@
-# Learned Diffusion MRI Acquisition Parameters for Accelerated Tractography
+# Towards optimal sampling in diffusion MRI for accelerated fiber tractography
 
 This repository contains a PyTorch implementation of the paper:
 
 Change
-[PILOT: Physics-Informed Learned Optimal Trajectories for Accelerated MRI](https://arxiv.org/abs/1909.05773).
+[Towards optimal sampling in diffusion MRI for accelerated fiber tractography](https://arxiv.org/abs/1909.05773).
 
 Tomer Weiss (<tomer196@gmail.com>), Ortal Senouf, Sanketh Vedula, Oleg Michailovich, Michael Zibulevsky, Alex Bronstein
 
@@ -34,16 +34,5 @@ See 'exp.py' for basic use.
 ## Citing this Work - replace
 Please cite our work if you find this approach useful in your research:
 ```latex
-@ARTICLE{weiss2019pilot,
-       author = {{Weiss}, Tomer and {Senouf}, Ortal and {Vedula}, Sanketh and
-         {Michailovich}, Oleg and {Zibulevsky}, Michael and {Bronstein}, Alex},
-       title = "{PILOT: Physics-Informed Learned Optimal Trajectories for Accelerated MRI}",
-       journal = {arXiv e-prints},
-       year = "2019",
-       archivePrefix = {arXiv},
-       eprint = {1909.05773},
-}
-```
 
-## References
-We use the [fastMRI](https://github.com/facebookresearch/fastMRI) as starter template.
+```
