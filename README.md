@@ -1,4 +1,4 @@
-# Towards optimal sampling in diffusion MRI for accelerated fiber tractography
+# Towards learned optimal q-space sampling in diffusion MRI
 
 This repository contains a PyTorch implementation of the paper:
 
@@ -31,8 +31,15 @@ python data/create_dataset.py
 ```
 See 'exp.py' for basic use.
 
-## Citing this Work - replace
+## Citing this Work
 Please cite our work if you find this approach useful in your research:
 ```latex
-
+@ARTICLE{2020arXiv200903008W,
+       author = {{Weiss}, Tomer and {Vedula}, Sanketh and {Senouf}, Ortal and
+         {Michailovich}, Oleg and {AlexBronstein}},
+        title = "{Towards learned optimal q-space sampling in diffusion MRI}",
+      journal = {arXiv e-prints},
+         year = 2020,
+       eprint = {2009.03008},
+}
 ```
